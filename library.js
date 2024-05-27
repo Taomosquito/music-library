@@ -103,28 +103,46 @@ const addTrackToPlaylist = function(trackId, playlistId) {
 
 addTrackToPlaylist("t03", "p01")
 console.log(library.playlists.p01);
+console.log("===============");
 
-/*
+
 // generates a unique id
 // (already implemented: use this for addTrack and addPlaylist)
 const generateUid = function() {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 }
-*/
 
-/*
 // adds a track to the library
 const addTrack = function(name, artist, album) {
+  const fastTracks = library["tracks"];
+  newId = generateUid();
+  fastTracks[newId] = {
+    id: newId,
+    name: name,
+    artist: artist,
+    album: album
+  };
 
 }
-*/
 
-/*
+addTrack("Words From The Gang", "DJ Coone", "Zoo Limited");
+console.log(library.tracks);
+console.log("===============");
+
 // adds a playlist to the library
 const addPlaylist = function(name) {
-
+  fastplaylists = library["playlists"];
+  newId = generateUid();
+  fastplaylists[newId] = {
+    id: newId,
+    name: name,
+    tracks: [],
+  }
 }
-*/
+
+addPlaylist("Electronic");
+console.log(library.playlists);
+console.log("===============");
 
 /*
 // STRETCH:
